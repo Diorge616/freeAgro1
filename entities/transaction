@@ -1,0 +1,57 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "pix_sent",
+        "pix_received",
+        "investment",
+        "withdrawal",
+        "deposit"
+      ],
+      "description": "Type of transaction"
+    },
+    "description": {
+      "type": "string",
+      "description": "Transaction description"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Transaction amount in BRL"
+    },
+    "recipient": {
+      "type": "string",
+      "description": "Recipient name or institution"
+    },
+    "recipient_key": {
+      "type": "string",
+      "description": "PIX key or account info"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "pending",
+        "failed"
+      ],
+      "default": "completed"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "transfer",
+        "investment",
+        "bill",
+        "salary",
+        "other"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "description"
+  ]
+}
